@@ -7,8 +7,8 @@ import 'rxjs/add/operator/catch';
   providedIn: 'root'
 })
 export class LibrarydataService {
-  apiUrl_login: string = "http://10.117.189.94:9093";
-  apiUrl: string = "http://10.117.189.192:9093";
+  apiUrl_login: string = "http://10.117.189.94";
+  apiUrl: string = "http://10.117.189.192";
 
   constructor(private http: HttpClient) { }
 
