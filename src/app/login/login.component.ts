@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LibrarydataService } from '../librarydata.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   password: any;
   loggedInUser: String;
   userInfo = {};
-  constructor(private router: Router, private libraryDataService: LibrarydataService) { }
+  constructor(private router: Router, private libraryDataService: LibrarydataService, private userService: UserService) { }
 
   ngOnInit() {
   }
@@ -26,10 +27,12 @@ export class LoginComponent implements OnInit {
     // } else {
     //   alert('Login Failed');
     // }
+    
     this.userInfo = { userEmail: this.userEmail, password: this.password };
     this.libraryDataService.login(this.userInfo)
       .subscribe(data => {
         this.userInfo = data;
+        this.userService.currentUserInfo = data;
         this.router.navigate(['\home']);
         console.log('this.userInfo', this.userInfo);
       })

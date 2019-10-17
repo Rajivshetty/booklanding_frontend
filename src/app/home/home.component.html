@@ -4,7 +4,7 @@
     <thead>
       <tr>
         <th>Book Name</th>
-        <th>Book Number</th>
+        <th>Book Serial Number</th>
         <th>Author</th>
         <th>Language</th>
         <th>Edition</th>
@@ -15,13 +15,16 @@
     <tbody>
       <tr *ngFor="let book of books">
         <td>{{ book.bookName }}</td>
-        <td>{{ book.bookNumber }}</td>
+        <td>{{ book.bookNum }}</td>
         <td>{{ book.author }}</td>
         <td>{{ book.language }}</td>
         <td>{{ book.edition }}</td>
         <td>{{ book.status }}</td>
-        <td>
-          <button type="button" class="btn btn-primary" routerLink="\borrowBook">Borrow Book</button>
+        <td *ngIf="book.status == 'AVAILABLE'">
+          <button type="button" class="btn btn-primary" routerLink="\borrowBook" (click)="borrowBook(book.bookId)">Borrow Book</button>
+        </td>
+        <td *ngIf="book.status != 'AVAILABLE'">
+          <button type="button" class="btn btn-primary" routerLink="\borrowBook">Request Book</button>
         </td>
       </tr>
     </tbody>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LibrarydataService } from '../librarydata.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { LibrarydataService } from '../librarydata.service';
 export class HomeComponent implements OnInit {
   books: any = [];
 
-  constructor(private libraryDataService: LibrarydataService) { }
+  constructor(private libraryDataService: LibrarydataService, private userService: UserService) { }
 
   ngOnInit() {
     this.getBooks();
@@ -18,8 +19,19 @@ export class HomeComponent implements OnInit {
   getBooks() {
     this.libraryDataService.getBookDetails()
       .subscribe(data => {
-        debugger;
         this.books = data.bookDto;
+      }, error => {
+      });
+  }
+
+  borrowBook(bookId) {
+    let bookDetails = {
+      userId: this.userService.currentUserInfo['userId'],
+      bookId: bookId
+    }
+    this.libraryDataService.borrowBook(bookDetails)
+      .subscribe(data => {
+        console.log(data);
       }, error => {
       });
   }

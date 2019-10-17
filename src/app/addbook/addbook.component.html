@@ -30,22 +30,27 @@
             <div class="form-group row">
               <label for="phone_number" class="col-md-4 col-form-label text-md-right">Copyright</label>
               <div class="col-md-6">
-                <input type="text" id="copyright" [(ngModel)]="copyRight" class="form-control">
+                <input type="text" id="copyright" [(ngModel)]="copyRight"  [ngModelOptions]="{standalone:true}" class="form-control">
               </div>
             </div>
 
             <div class="form-group row">
               <label for="present_address" class="col-md-4 col-form-label text-md-right">Edition</label>
               <div class="col-md-6">
-                <input type="text" id="present_address" [(ngModel)]="edition" class="form-control">
+                <input type="text" id="present_address" [(ngModel)]="edition" [ngModelOptions]="{standalone:true}" class="form-control">
               </div>
             </div>
 
             <div class="form-group row">
               <label for="present_address" class="col-md-4 col-form-label text-md-right">Category Type</label>
-              <div class="col-md-6">
-                <input type="text" id="present_address" [(ngModel)]="categoryType" class="form-control">
-              </div>
+              <!-- <div class="col-md-6"> -->
+                  <select [(ngModel)]="categoryType" [ngModelOptions]="{standalone:true}">
+                      <option value="fiction">Fiction</option>
+                      <option value="non-fiction" >Non Fiction</option>
+                    </select>
+                <!-- <input type="text" id="present_address" [(ngModel)]="categoryType" class="form-control" [ngModelOptions]="{standalone:
+                  true}"> -->
+              <!-- </div> -->
             </div>
 
             <div class="col-md-6 offset-md-4">

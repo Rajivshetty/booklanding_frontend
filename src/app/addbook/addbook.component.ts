@@ -24,6 +24,9 @@ export class AddbookComponent implements OnInit {
     alert('Book Registered Successfully');
     this.bookDetails = { bookName: this.bookName, author: this.author, language: this.language, copyRight: this.copyRight, edition: this.edition, categoryType: this.categoryType }
     this.libraryDataService.addBooks(this.bookDetails)
+    .subscribe(data => {
+      console.log('addbook', data);
+    })
     console.log('Book Info', this.bookDetails);
     this.router.navigate(['\home']);
   }
