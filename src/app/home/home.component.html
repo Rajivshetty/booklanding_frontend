@@ -1,10 +1,9 @@
 <div class="container">
-  <h2>Book Details</h2>
+  <h2>Book Availablity</h2>
   <table class="table">
     <thead>
       <tr>
         <th>Book Name</th>
-        <th>Book Serial Number</th>
         <th>Author</th>
         <th>Language</th>
         <th>Edition</th>
@@ -15,11 +14,10 @@
     <tbody>
       <tr *ngFor="let book of books">
         <td>{{ book.bookName }}</td>
-        <td>{{ book.bookNum }}</td>
         <td>{{ book.author }}</td>
         <td>{{ book.language }}</td>
         <td>{{ book.edition }}</td>
-        <td>{{ book.status }}</td>
+        <td>{{ book.status.toLowerCase() }}</td>
         <td *ngIf="book.status == 'AVAILABLE'">
           <button type="button" class="btn btn-primary" routerLink="\borrowBook" (click)="borrowBook(book.bookId)">Borrow Book</button>
         </td>
