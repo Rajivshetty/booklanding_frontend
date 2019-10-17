@@ -36,7 +36,7 @@ export class LibrarydataService {
 
   borrowBook(bookDetails) {
     console.log('UserInfo', bookDetails);
-    return this.http.post(this.apiUrl_login + '/library/api/issuedBooks', bookDetails)
+    return this.http.post(this.apiUrl_login + '/library/api/books/borrow', bookDetails)
       .catch((error: any) => Observable.throw(error || 'Server Error'));
   }
 
