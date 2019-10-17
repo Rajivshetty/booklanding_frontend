@@ -1,0 +1,62 @@
+<!-- <main class="my-form"> -->
+<div class="cotainer">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">Add Your Book</div>
+        <div class="card-body">
+          <form name="my-form" onsubmit="return validform()" action="success.php" method="">
+            <div class="form-group row">
+              <label for="full_name" class="col-md-4 col-form-label text-md-right">Book Name</label>
+              <div class="col-md-6">
+                <input type="text" id="full_name" [(ngModel)]="bookName" class="form-control" name="full-name">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="email_address" class="col-md-4 col-form-label text-md-right">Author</label>
+              <div class="col-md-6">
+                <input type="text" id="email_address" [(ngModel)]="author" class="form-control" name="email-address">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="pswd" class="col-md-4 col-form-label text-md-right">Language</label>
+              <div class="col-md-6">
+                <input type="text" id="pswd" [(ngModel)]="language" class="form-control" name="pswd">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="phone_number" class="col-md-4 col-form-label text-md-right">Copyright</label>
+              <div class="col-md-6">
+                <input type="text" id="copyright" [(ngModel)]="copyRight" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="present_address" class="col-md-4 col-form-label text-md-right">Edition</label>
+              <div class="col-md-6">
+                <input type="text" id="present_address" [(ngModel)]="edition" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="present_address" class="col-md-4 col-form-label text-md-right">Category Type</label>
+              <div class="col-md-6">
+                <input type="text" id="present_address" [(ngModel)]="categoryType" class="form-control">
+              </div>
+            </div>
+
+            <div class="col-md-6 offset-md-4">
+              <button type="submit" class="btn btn-primary" (click)="addBook()">
+                Add Book
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </main> -->

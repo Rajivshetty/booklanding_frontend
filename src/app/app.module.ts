@@ -14,6 +14,8 @@ import { HeaderComponent } from './common/header/header.component';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
+import { AddbookComponent } from './addbook/addbook.component';
+import { BorrowbookComponent } from './borrowbook/borrowbook.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { TableModule } from 'primeng/table';
     HomeComponent,
     LoginComponent,
     HeaderComponent,
-    RegisterComponent
+    RegisterComponent,
+    AddbookComponent,
+    BorrowbookComponent
   ],
   imports: [
     BrowserModule,

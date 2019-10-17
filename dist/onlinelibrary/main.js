@@ -23,6 +23,75 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./src/app/addbook/addbook.component.css":
+/*!***********************************************!*\
+  !*** ./src/app/addbook/addbook.component.css ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FkZGJvb2svYWRkYm9vay5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/addbook/addbook.component.html":
+/*!************************************************!*\
+  !*** ./src/app/addbook/addbook.component.html ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!-- <main class=\"my-form\"> -->\n<div class=\"cotainer\">\n  <div class=\"row justify-content-center\">\n    <div class=\"col-md-8\">\n      <div class=\"card\">\n        <div class=\"card-header\">Add Your Book</div>\n        <div class=\"card-body\">\n          <form name=\"my-form\" onsubmit=\"return validform()\" action=\"success.php\" method=\"\">\n            <div class=\"form-group row\">\n              <label for=\"full_name\" class=\"col-md-4 col-form-label text-md-right\">Book Name</label>\n              <div class=\"col-md-6\">\n                <input type=\"text\" id=\"full_name\" [(ngModel)]=\"bookName\" class=\"form-control\" name=\"full-name\">\n              </div>\n            </div>\n\n            <div class=\"form-group row\">\n              <label for=\"email_address\" class=\"col-md-4 col-form-label text-md-right\">Author</label>\n              <div class=\"col-md-6\">\n                <input type=\"text\" id=\"email_address\" [(ngModel)]=\"author\" class=\"form-control\" name=\"email-address\">\n              </div>\n            </div>\n\n            <div class=\"form-group row\">\n              <label for=\"pswd\" class=\"col-md-4 col-form-label text-md-right\">Language</label>\n              <div class=\"col-md-6\">\n                <input type=\"text\" id=\"pswd\" [(ngModel)]=\"language\" class=\"form-control\" name=\"pswd\">\n              </div>\n            </div>\n\n            <div class=\"form-group row\">\n              <label for=\"phone_number\" class=\"col-md-4 col-form-label text-md-right\">Copyright</label>\n              <div class=\"col-md-6\">\n                <input type=\"text\" id=\"copyright\" [(ngModel)]=\"copyRight\" class=\"form-control\">\n              </div>\n            </div>\n\n            <div class=\"form-group row\">\n              <label for=\"present_address\" class=\"col-md-4 col-form-label text-md-right\">Edition</label>\n              <div class=\"col-md-6\">\n                <input type=\"text\" id=\"present_address\" [(ngModel)]=\"edition\" class=\"form-control\">\n              </div>\n            </div>\n\n            <div class=\"form-group row\">\n              <label for=\"present_address\" class=\"col-md-4 col-form-label text-md-right\">Category Type</label>\n              <div class=\"col-md-6\">\n                <input type=\"text\" id=\"present_address\" [(ngModel)]=\"categoryType\" class=\"form-control\">\n              </div>\n            </div>\n\n            <div class=\"col-md-6 offset-md-4\">\n              <button type=\"submit\" class=\"btn btn-primary\" (click)=\"addBook()\">\n                Add Book\n              </button>\n            </div>\n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n<!-- </main> -->"
+
+/***/ }),
+
+/***/ "./src/app/addbook/addbook.component.ts":
+/*!**********************************************!*\
+  !*** ./src/app/addbook/addbook.component.ts ***!
+  \**********************************************/
+/*! exports provided: AddbookComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddbookComponent", function() { return AddbookComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _librarydata_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../librarydata.service */ "./src/app/librarydata.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+var AddbookComponent = /** @class */ (function () {
+    function AddbookComponent(libraryDataService, router) {
+        this.libraryDataService = libraryDataService;
+        this.router = router;
+    }
+    AddbookComponent.prototype.ngOnInit = function () {
+    };
+    AddbookComponent.prototype.addBook = function () {
+        alert('Book Registered Successfully');
+        this.bookDetails = { bookName: this.bookName, author: this.author, language: this.language, copyRight: this.copyRight, edition: this.edition, categoryType: this.categoryType };
+        this.libraryDataService.addBooks(this.bookDetails);
+        console.log('Book Info', this.bookDetails);
+        this.router.navigate(['\home']);
+    };
+    AddbookComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-addbook',
+            template: __webpack_require__(/*! ./addbook.component.html */ "./src/app/addbook/addbook.component.html"),
+            styles: [__webpack_require__(/*! ./addbook.component.css */ "./src/app/addbook/addbook.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_librarydata_service__WEBPACK_IMPORTED_MODULE_2__["LibrarydataService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+    ], AddbookComponent);
+    return AddbookComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/app-routing.module.ts":
 /*!***************************************!*\
   !*** ./src/app/app-routing.module.ts ***!
@@ -39,6 +108,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
 /* harmony import */ var _register_register_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./register/register.component */ "./src/app/register/register.component.ts");
+/* harmony import */ var _addbook_addbook_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./addbook/addbook.component */ "./src/app/addbook/addbook.component.ts");
+/* harmony import */ var _borrowbook_borrowbook_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./borrowbook/borrowbook.component */ "./src/app/borrowbook/borrowbook.component.ts");
+
+
 
 
 
@@ -46,10 +119,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: 'login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_3__["LoginComponent"] },
     { path: 'home', component: _home_home_component__WEBPACK_IMPORTED_MODULE_4__["HomeComponent"] },
-    { path: 'register', component: _register_register_component__WEBPACK_IMPORTED_MODULE_5__["RegisterComponent"] }
+    { path: 'register', component: _register_register_component__WEBPACK_IMPORTED_MODULE_5__["RegisterComponent"] },
+    { path: 'addbook', component: _addbook_addbook_component__WEBPACK_IMPORTED_MODULE_6__["AddbookComponent"] },
+    { path: 'borrowbook', component: _borrowbook_borrowbook_component__WEBPACK_IMPORTED_MODULE_7__["BorrowbookComponent"] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -154,6 +229,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var primeng_table__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! primeng/table */ "./node_modules/primeng/table.js");
 /* harmony import */ var primeng_table__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(primeng_table__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var _addbook_addbook_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./addbook/addbook.component */ "./src/app/addbook/addbook.component.ts");
+/* harmony import */ var _borrowbook_borrowbook_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./borrowbook/borrowbook.component */ "./src/app/borrowbook/borrowbook.component.ts");
+
+
 
 
 
@@ -181,7 +260,9 @@ var AppModule = /** @class */ (function () {
                 _home_home_component__WEBPACK_IMPORTED_MODULE_11__["HomeComponent"],
                 _login_login_component__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"],
                 _common_header_header_component__WEBPACK_IMPORTED_MODULE_13__["HeaderComponent"],
-                _register_register_component__WEBPACK_IMPORTED_MODULE_14__["RegisterComponent"]
+                _register_register_component__WEBPACK_IMPORTED_MODULE_14__["RegisterComponent"],
+                _addbook_addbook_component__WEBPACK_IMPORTED_MODULE_17__["AddbookComponent"],
+                _borrowbook_borrowbook_component__WEBPACK_IMPORTED_MODULE_18__["BorrowbookComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -206,6 +287,62 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/borrowbook/borrowbook.component.css":
+/*!*****************************************************!*\
+  !*** ./src/app/borrowbook/borrowbook.component.css ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2JvcnJvd2Jvb2svYm9ycm93Ym9vay5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/borrowbook/borrowbook.component.html":
+/*!******************************************************!*\
+  !*** ./src/app/borrowbook/borrowbook.component.html ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <h2>Borrow Book</h2>\n  <form action=\"/action_page.php\">\n    <div class=\"form-group\">\n      <label for=\"email\">User ID:</label>\n      <input type=\"text\" class=\"form-control\" id=\"userId\" placeholder=\"Enter User ID\" name=\"userId\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"pwd\">Book ID</label>\n      <input type=\"text\" class=\"form-control\" id=\"bookId\" placeholder=\"Enter Book ID\" name=\"bookId\">\n    </div>\n    <button type=\"submit\" class=\"btn btn-primary\">Borrow Book</button>\n  </form>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/borrowbook/borrowbook.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/borrowbook/borrowbook.component.ts ***!
+  \****************************************************/
+/*! exports provided: BorrowbookComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BorrowbookComponent", function() { return BorrowbookComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var BorrowbookComponent = /** @class */ (function () {
+    function BorrowbookComponent() {
+    }
+    BorrowbookComponent.prototype.ngOnInit = function () {
+    };
+    BorrowbookComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-borrowbook',
+            template: __webpack_require__(/*! ./borrowbook.component.html */ "./src/app/borrowbook/borrowbook.component.html"),
+            styles: [__webpack_require__(/*! ./borrowbook.component.css */ "./src/app/borrowbook/borrowbook.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], BorrowbookComponent);
+    return BorrowbookComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/common/header/header.component.css":
 /*!****************************************************!*\
   !*** ./src/app/common/header/header.component.css ***!
@@ -224,7 +361,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Navigation -->\n<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary static-top\">\n  <div class=\"container\">\n    <a class=\"navbar-brand\" href=\"#\">\n      <img src=\"assets/img/librarylogo.png\" style=\"width: 120px; height: 50px;\" alt=\"Book Lending System\">\n      <!-- <h3>Book Lending System</h3> -->\n    </a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarResponsive\"\n      aria-controls=\"navbarResponsive\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\">\n      <ul class=\"navbar-nav ml-auto\">\n        <li class=\"nav-item active\">\n          <a class=\"nav-link\" routerLink=\"/home\">Home\n            <span class=\"sr-only\">(current)</span>\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" routerLink=\"/login\">Login</a>\n        </li>\n        <!-- <li class=\"nav-item\">\n          <a class=\"nav-link\" href=\"#\">Services</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" href=\"#\">Contact</a>\n        </li> -->\n      </ul>\n    </div>\n  </div>\n</nav>"
+module.exports = "<!-- Navigation -->\n<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary static-top\">\n  <div class=\"container\">\n    <a class=\"navbar-brand\" href=\"#\">\n      <img src=\"assets/img/librarylogo.png\" style=\"width: 120px; height: 50px;\" alt=\"Book Lending System\">\n      <!-- <h3>Book Lending System</h3> -->\n    </a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarResponsive\"\n      aria-controls=\"navbarResponsive\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\">\n      <ul class=\"navbar-nav ml-auto\">\n        <li class=\"nav-item active\">\n          <a class=\"nav-link\" routerLink=\"/home\">Home\n            <span class=\"sr-only\">(current)</span>\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" routerLink=\"/login\">Login</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" routerLink=\"/addbook\">Add Book</a>\n        </li>\n      </ul>\n    </div>\n  </div>\n</nav>"
 
 /***/ }),
 
@@ -280,7 +417,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <h2>Book Details</h2>\n  <table class=\"table\">\n    <thead>\n      <tr>\n        <th>Book Name</th>\n        <th>Book Number</th>\n        <th>Author</th>\n        <th>Language</th>\n        <th>Edition</th>\n        <th>Status</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let book of books\">\n        <td>{{ book.bookName }}</td>\n        <td>{{ book.bookNumber }}</td>\n        <td>{{ book.author }}</td>\n        <td>{{ book.language }}</td>\n        <td>{{ book.edition }}</td>\n        <td>{{ book.status }}</td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+module.exports = "<div class=\"container\">\n  <h2>Book Details</h2>\n  <table class=\"table\">\n    <thead>\n      <tr>\n        <th>Book Name</th>\n        <th>Book Number</th>\n        <th>Author</th>\n        <th>Language</th>\n        <th>Edition</th>\n        <th>Status</th>\n        <th> Borrow Book</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let book of books\">\n        <td>{{ book.bookName }}</td>\n        <td>{{ book.bookNumber }}</td>\n        <td>{{ book.author }}</td>\n        <td>{{ book.language }}</td>\n        <td>{{ book.edition }}</td>\n        <td>{{ book.status }}</td>\n        <td>\n          <button type=\"button\" class=\"btn btn-primary\" routerLink=\"\\borrowBook\">Borrow Book</button>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
 
 /***/ }),
 
@@ -364,20 +501,20 @@ var LibrarydataService = /** @class */ (function () {
             // .map((res: Response) => res.json())
             .catch(function (error) { return rxjs_Rx__WEBPACK_IMPORTED_MODULE_3__["Observable"].throw(error || 'Server Error'); });
     };
-    LibrarydataService.prototype.getBooks = function () {
-        return this.http.get('http://api/books')
-            .map(function (res) { return res.json(); })
-            .catch(function (error) { return rxjs_Rx__WEBPACK_IMPORTED_MODULE_3__["Observable"].throw(error.json().error || 'Server Error'); });
-    };
     LibrarydataService.prototype.registerUser = function (userDetails) {
         console.log('UserInfo', userDetails);
         return this.http.post('http://10.117.189.237:9093/library/api/registration', userDetails)
             // .map((res: Response) => res.json())
             .catch(function (error) { return rxjs_Rx__WEBPACK_IMPORTED_MODULE_3__["Observable"].throw(error || 'Server Error'); });
     };
+    LibrarydataService.prototype.addBooks = function (bookDetails) {
+        console.log('UserInfo', bookDetails);
+        return this.http.post('http://10.117.189.237:9093/library/api/books', bookDetails)
+            .catch(function (error) { return rxjs_Rx__WEBPACK_IMPORTED_MODULE_3__["Observable"].throw(error || 'Server Error'); });
+    };
     LibrarydataService.prototype.getBookDetails = function () {
         console.log('Into get Book Details Service');
-        return this.http.get('http://10.117.189.237:9093/library/api/books');
+        return this.http.get('http://10.117.189.192:9093/library/api/books');
         // .map((res: Response) => res.json())
         // .catch((error: any) => Observable.throw(error.json().error || 'Server Error'));
     };
@@ -455,6 +592,7 @@ var LoginComponent = /** @class */ (function () {
         this.libraryDataService.login(this.userInfo)
             .subscribe(function (data) {
             _this.userInfo = data;
+            _this.router.navigate(['\home']);
             console.log('this.userInfo', _this.userInfo);
         });
     };

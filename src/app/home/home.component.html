@@ -9,6 +9,7 @@
         <th>Language</th>
         <th>Edition</th>
         <th>Status</th>
+        <th> Borrow Book</th>
       </tr>
     </thead>
     <tbody>
@@ -19,6 +20,9 @@
         <td>{{ book.language }}</td>
         <td>{{ book.edition }}</td>
         <td>{{ book.status }}</td>
+        <td>
+          <button type="button" class="btn btn-primary" routerLink="\borrowBook">Borrow Book</button>
+        </td>
       </tr>
     </tbody>
   </table>

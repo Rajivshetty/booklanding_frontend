@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
     this.libraryDataService.login(this.userInfo)
       .subscribe(data => {
         this.userInfo = data;
+        this.router.navigate(['\home']);
         console.log('this.userInfo', this.userInfo);
       })
 
